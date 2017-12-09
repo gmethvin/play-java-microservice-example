@@ -1,0 +1,6 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           com.example.myservice.MyServiceController.index
+GET     /count                      com.example.myservice.MyServiceController.count
