@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>myservice</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>play2</packaging>
+
+  <name>Play Java microservice</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <play2.version>2.6.9</play2.version>
+    <scala.version>2.12.4</scala.version>
+    <scala.binaryVersion>2.12</scala.binaryVersion>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.typesafe.play</groupId>
+      <artifactId>play_${scala.binaryVersion}</artifactId>
+      <version>${play2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.typesafe.play</groupId>
+      <artifactId>play-guice_${scala.binaryVersion}</artifactId>
+      <version>${play2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.typesafe.play</groupId>
+      <artifactId>play-logback_${scala.binaryVersion}</artifactId>
+      <version>${play2.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.typesafe.play</groupId>
+      <artifactId>play-akka-http-server_${scala.binaryVersion}</artifactId>
+      <version>${play2.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.google.code.play2-maven-plugin</groupId>
+        <artifactId>play2-maven-plugin</artifactId>
+        <version>1.0.0-rc1</version>
+        <extensions>true</extensions>
+        <configuration>
+          <mainLang>java</mainLang>
+          <confDirectory>${project.basedir}/src/main/resources</confDirectory>
+          <routesGenerator>injected</routesGenerator>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+        <artifactId>sbt-compiler-maven-plugin</artifactId>
+        <version>1.0.0</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
