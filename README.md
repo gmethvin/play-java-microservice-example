@@ -1,6 +1,6 @@
 # Play Java microservice example
 
-This is a basic example demonstrating the `PlayService` sbt plugin for creating simple Play-based microservices. This plugin uses the standard maven layout, not the traditional Play web layout.
+This is a basic example demonstrating a Play microservice. This project uses the standard maven layout instead of the traditional Play web layout, and uses the `PlayService` sbt plugin to avoid unnecessary build dependencies.
 
 There are a few relevant files:
  - `project/plugins.sbt`: includes the Play sbt plugin.
